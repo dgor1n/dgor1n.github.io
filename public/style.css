@@ -1,24 +1,18 @@
-body {
-  font-family: sans-serif;
-  margin: auto;
-  max-width: 1280px;
+.container {
+  max-width: 500px;
 }
 
-.navbar {
-  background-color: #313236;
-  border-radius: 2px;
-  max-width: 800px;
+.border-top { border-top: 1px solid #e5e5e5; }
+.border-bottom { border-bottom: 1px solid #e5e5e5; }
+.border-top-gray { border-top-color: #adb5bd; }
+
+.box-shadow { box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05); }
+
+.lh-condensed { line-height: 1.25; }
+
+.panel {
+  margin: 0 auto;
+  max-width: 600px;
 }
 
-.navbar a {
-  color: #aaa;
-  display: inline-block;
-  font-size: 15px;
-  padding: 10px;
-  text-decoration: none;
-}
-
-.navbar a:hover {
-  color: #ffffff;
-}
 
