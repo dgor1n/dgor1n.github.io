@@ -51,8 +51,6 @@ $(document).ready(function(){
 });
 
 function changeColor(result){
-    console.log(1235);
-
     switch (true) {
         case (result <= 0):
             $('#result').css("color", "black");
