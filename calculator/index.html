@@ -20,51 +20,175 @@
       </div>
 
       <div class="panel">
-        <form id="calculator" class="list-group">
-          <ul class="list-group">
-            <li class="list-group-item">
-              <label><input type="checkbox" class="form-check-input"value="1"> Простой хотфикс (<strong>1</strong>)</label>
-              <ul>
-                <li><label><input type="checkbox" class="form-check-input"value="1"> Нужны правки автотеста (<strong>1</strong>)</label></li>
-              </ul>
-            </li>
-            <li class="list-group-item">
-              <label><input type="checkbox" class="form-check-input"value="2"> Добавить метод, клиент, таскхендлер (<strong>2</strong>)</label>
-                <ul>
-                  <li><label><input type="checkbox" class="form-check-input"value="2"> Нужен автотест (<strong>2</strong>)</label></li>
-                  <li><label><input type="checkbox" class="form-check-input"value="1"> Задача требует создания новых запросов в БД (<strong>1</strong>)</label></li>
-                </ul>
-            </li>
-            <li class="list-group-item">
-              <label><input type="checkbox" class="form-check-input"value="3"> Добавить сложный метод, кафка косньюмер/продюсер (<strong>3</strong>)</label>
-                <ul>
-                  <li><label><input type="checkbox" class="form-check-input"value="2"> Нужен автотест (<strong>2</strong>)</label></li>
-                  <li><label><input type="checkbox" class="form-check-input"value="1"> Задача требует создания новых запросов в БД (<strong>1</strong>)</label></li>
-                </ul>
-            </li>
-            <li class="list-group-item">
-              <label><input type="checkbox" class="form-check-input"value="4"> Добавить сложный сервис, косньюмер/продюсер (<strong>4</strong>)</label>
-                <ul>
-                  <li><label><input type="checkbox" class="form-check-input"value="3"> Нужен автотест (<strong>3</strong>)</label></li>
-                  <li><label><input type="checkbox" class="form-check-input"value="2"> Задача требует создания новых запросов в БД (<strong>2</strong>)</label></li>
-                </ul>
-            </li>
-            <li class="list-group-item">
-              <label><input type="checkbox" class="form-check-input"value="3"> Простая инфраструктурная задача (<strong>3</strong>)</label>
-                <ul>
-                  <li><label><input type="checkbox" class="form-check-input"value="2"> Нужен автотест (<strong>2</strong>)</label></li>
-                </ul>
-            </li>
-            <li class="list-group-item">
-              <label><input type="checkbox" class="form-check-input"value="5"> Сложная инфраструктурная задача (<strong>5</strong>)</label>
-                <ul>
-                  <li><label><input type="checkbox" class="form-check-input"value="3"> Нужен автотест (<strong>3</strong>)</label></li>
-                </ul>
-            </li>
-          </ul>
-        </form>
+        <h4 class="text-center"><output id="result"><strong>0</strong></output> story points</h4>
         <p></p>
-        <h4 class="text-center"><span><strong id="result">123</strong></span> story points</h4>
+        <form id="calculator" class="list-group">
+          <table class="table">
+            <tr>
+              <th>Что нужно сделать?</th>
+              <th>Сложность</th>
+              <th>Оценка</th>
+            </tr>
+            <tr>
+              <td>
+                  <label>
+                    <input type="checkbox" name="hotfix" class="form-check-input">
+                    <strong>Хотфикс</strong>
+                  </label>
+              </td>
+              <td>
+                <input type="range" name="hotfix" class="form-range" min="1" max="3" value="1" disabled>
+                <div class="helper" name="hotfix"></div>
+              </td>
+              <td>
+                <output name="hotfix" style="display:none;">0</output>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label>
+                  <input type="checkbox" name="method" class="form-check-input" >
+                  <strong>Добавить/изменить метод</strong>
+                </label>
+              </td>
+              <td>
+                <input type="range" name="method" class="form-range" min="2" max="5" value="2" disabled>
+                <div class="helper" name="hotfix">
+                </div>
+              </td>
+              <td><output name="method" style="display:none;">0</output></td>
+            </tr>
+            <tr>
+              <td>
+                <label>
+                  <input type="checkbox" name="client" class="form-check-input" >
+                  <strong>Добавить внешнюю интеграцию (клиент)</strong>
+                </label>
+              </td>
+              <td>
+                <input type="range" name="client" class="form-range" min="2" max="4" value="2" disabled>
+                <div class="helper" name="client">
+                </div>
+              </td>
+              <td><output name="client" style="display:none;">0</output></td>
+            </tr>
+            <tr>
+              <td>
+                <label>
+                  <input type="checkbox" name="service" class="form-check-input" >
+                  <strong>Добавить внутренний сервис</strong>
+                </label>
+              </td>
+              <td>
+                <input type="range" name="service" class="form-range" min="2" max="5" value="2" disabled>
+                <div class="helper" name="service">
+                </div>
+              </td>
+              <td><output name="service" style="display:none;">0</output></td>
+            </tr>
+            <tr>
+              <td>
+                <label>
+                  <input type="checkbox" name="taskhandler" class="form-check-input" >
+                  <strong>Добавить таскхендлер</strong>
+                </label>
+              </td>
+              <td>
+                <input type="range" name="taskhandler" class="form-range" min="2" max="4" value="2" disabled>
+                <div class="helper" name="taskhandler">
+                </div>
+              </td>
+              <td><output name="taskhandler" style="display:none;">0</output></td>
+            </tr>
+            <tr>
+              <td>
+                <label>
+                  <input type="checkbox" name="kafka" class="form-check-input" >
+                  <strong>Добавить кафка консьюмер / продюсер</strong>
+                </label>
+              </td>
+              <td>
+                <input type="range" name="kafka" class="form-range" min="3" max="5" value="3" disabled>
+                <div class="helper" name="kafka">
+                </div>
+              </td>
+              <td><output name="kafka" style="display:none;">0</output></td>
+            </tr>
+            <tr>
+              <td>
+                <label>
+                  <input type="checkbox" name="k8s" class="form-check-input" >
+                  <strong>Инфраструктурная задача</strong>
+                </label>
+              </td>
+              <td>
+                <input type="range" name="k8s" class="form-range" min="3" max="5" value="3" disabled>
+                <div class="helper" name="k8s">
+                </div>
+              </td>
+              <td><output name="k8s" style="display:none;">0</output></td>
+            </tr>
+            <tr>
+              <td colspan="3" class='text-center'><h4>Дополнительно</h3></td>
+            </tr>
+            <tr>
+              <td>
+                <label>
+                  <input type="checkbox" name="fix_autotest" class="form-check-input" >
+                  <strong>Нужны правки автотеста</strong>
+                </label>
+              </td>
+              <td>
+                <input type="range" name="fix_autotest" class="form-range" min="1" max="3" value="1" disabled>
+                <div class="helper" name="fix_autotest">
+                </div>
+              </td>
+              <td><output name="fix_autotest" style="display:none;">0</output></td>
+            </tr>
+            <tr>
+              <td>
+                <label>
+                  <input type="checkbox" name="autotest" class="form-check-input" >
+                  <strong>Нужен новый автотест</strong>
+                </label>
+              </td>
+              <td>
+                <input type="range" name="autotest" class="form-range" min="2" max="5" value="1" disabled>
+                <div class="helper" name="autotest">
+                </div>
+              </td>
+              <td><output name="autotest" style="display:none;">0</output></td>
+            </tr>
+            <tr>
+              <td>
+                <label>
+                  <input type="checkbox" name="database" class="form-check-input" >
+                  <strong>Нужны новые запросы в БД / репозитории</strong>
+                </label>
+              </td>
+              <td>
+                <input type="range" name="database" class="form-range" min="1" max="3" value="1" disabled>
+                <div class="helper" name="database">
+                </div>
+              </td>
+              <td><output name="database" style="display:none;">0</output></td>
+            </tr>
+            <tr>
+              <td>
+                <label>
+                  <input type="checkbox" name="grafana" class="form-check-input" >
+                  <strong>Нужны правки графаны / алертов</strong>
+                </label>
+              </td>
+              <td>
+                <input type="range" name="grafana" class="form-range" min="1" max="2" value="1" disabled>
+                <div class="helper" name="grafana">
+                </div>
+              </td>
+              <td><output name="grafana" style="display:none;">0</output></td>
+            </tr>
+          </table>
+        </form>
       </div>
       </div>
     </main>
